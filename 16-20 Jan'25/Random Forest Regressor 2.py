@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split, cross_val_score, KFold, Gr
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import r2_score
-import xgboost as xgb
+import Draft3 as xgb
 
 trainData = pd.read_csv("/Users/adityapandey/PycharmProjects/Kaggle-Competition /16-20 Jan'25/Dataset/train_data.csv")
 
