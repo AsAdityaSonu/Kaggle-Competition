@@ -11,7 +11,7 @@ from sklearn.feature_selection import RFE
 from sklearn.impute import SimpleImputer
 from sklearn.metrics import r2_score
 
-trainData = pd.read_csv("/Users/adityapandey/PycharmProjects/Kaggle-Competition /16-20 Jan'25/Dataset/train_data.csv")
+trainData = pd.read_csv("/Users/adityapandey/PycharmProjects/Kaggle-Competition /20-27 Jan'25/Dataset/train.csv")
 
 numeric_features = trainData.drop(columns=["target"]).columns
 imputer = SimpleImputer(strategy='mean')
@@ -57,7 +57,7 @@ best_et_model.fit(x_train_selected, y_train)
 train_r2 = r2_score(y_train, best_et_model.predict(x_train_selected))
 print(f"R² score on training data: {train_r2}")
 
-testData = pd.read_csv("/Users/adityapandey/PycharmProjects/Kaggle-Competition /16-20 Jan'25/Dataset/test_data.csv")
+testData = pd.read_csv("/Users/adityapandey/PycharmProjects/Kaggle-Competition /20-27 Jan'25/Dataset/test.csv")
 
 test_features = testData.drop(columns=["id"]).columns
 testData_imputed = pd.DataFrame(imputer.transform(testData[test_features]), columns=test_features)
